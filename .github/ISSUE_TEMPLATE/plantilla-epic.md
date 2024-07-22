@@ -30,5 +30,6 @@ Indicación de la importancia relativa de esta épica en el contexto del proyect
 * Referencias a documentos adicionales que proporcionan información detallada: cronograma especificaciones técnicas y/o notas de diseño
 ### Historia de Usuario Relacionadas
 Enlaces a historias de usuario específicas que desglosan la épica en partes manejables.
+Las historias podrán hacer referencia a otras historias relacionadas con un comentario #numero_de_issue. Ejemplo. “#1234”
 ### Notas y Comentarios Adicionales
 Espacio para agregar cualquier otra información relevante, preguntas abiertas o decisiones tomadas durante el desarrollo.
