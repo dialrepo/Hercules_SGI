@@ -33,6 +33,7 @@ Otras tareas, características o sistemas que deben completarse o estar disponib
 
 **Historias Relacionada**
 Referencia a historias de usuario, épicas o tasks relacionados si es aplicable.
+Las historias podrán hacer referencia a otras historias relacionadas con un comentario #numero_de_issue. Ejemplo. “#1234”
 
 **Impacto en el Sistema:**
 Descripción de cómo esta nueva característica o mejora afectará al sistema existente, incluyendo cualquier posible riesgo o consideración especial.
