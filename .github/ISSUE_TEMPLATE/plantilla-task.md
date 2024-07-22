@@ -1,6 +1,6 @@
 ---
 name: Plantilla Task
-about: Suggest an idea for this project
+about: Definición tarea (cambio/mejora) dentro de un evolutivo
 title: "[TASK]"
 labels: TASK
 assignees: ''
@@ -31,7 +31,7 @@ Información sobre el entorno en el que debe funcionar la nueva característica 
 **Dependencias:**
 Otras tareas, características o sistemas que deben completarse o estar disponibles antes de que se pueda iniciar o completar esta tarea.
 
-**Historias Relacionada **
+**Historias Relacionada**
 Referencia a historias de usuario, épicas o tasks relacionados si es aplicable.
 
 **Impacto en el Sistema:**
