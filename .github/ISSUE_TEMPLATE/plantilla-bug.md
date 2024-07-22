@@ -9,6 +9,7 @@ assignees: ''
 
 **Descripción de la incidencia o bug**
 Una descripción concisa y descriptiva que identifique claramente el problema indicando además si el error es constante o intermitente y como se considera de grave.
+La explicación de la incidencia que ha de ser lo suficientemente ilustrativo del caso, evitando cosas como "Error general", "Fallo en proyectos", "Falla el botón añadir" o similares 
 
 **Pasos para Reproducir**
 Una lista numerada de los pasos necesarios para reproducir el bug. Esto debería ser lo más detallado posible para asegurar que cualquiera pueda seguirlos.
