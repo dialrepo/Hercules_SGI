@@ -1,6 +1,6 @@
 ---
 name: Plantilla Bug
-about: Create a report to help us improve
+about: Tarea que describe una incidencia o problema encontrado.
 title: "[BUG]"
 labels: BUG
 assignees: ''
