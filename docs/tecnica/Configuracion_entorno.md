@@ -12,14 +12,14 @@ Una vez realizado este paso, se deben compilar el resto de módulos.
 3. En este punto, pasada la fase de compilación, es necesario configurar en cada módulo la url  del keycloak dentro del fichero aplication.yaml en el profile activo por defecto.
 
 ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_keycloak.jpg)
+    
+    * El módulo de ética depende de otros servicios por lo que será necesario configurar las urls correspondientes a los endpoints de comunicación interna para que apunten a los servicios del entorno de IC que tengamos levantado o localhost si lo tenemos levantado en local. 
 
-    * El módulo de ética depende de otros servicios por lo que será necesario configurar las urls correspondientes a los endpoints de comunicación interna para que apunten a los servicios del entorno de IC que tengamos levantado o localhost si lo tenemos levantado en local.
+![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_eti.jpg)
     
-    ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_eti.jpg)
-    
-    * El módulo de comunicación al igual que el de ética depende de otros servicios por lo que es necesario configurar las urls correspondientes y además si se necesita que la parte de envío de email funcione correctamente se debe configurar los datos del servidor de correo.
-    
-    ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_com.jpg)
+    * El módulo de comunicación al igual que el de ética depende de otros servicios por lo que es necesario configurar las urls correspondientes y además si se necesita que la parte de envío de email funcione correctamente se debe configurar los datos del servidor de correo.   
+
+![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_com.jpg)
     
     * TO DO:  revisar si hay más módulos especiales.
     
