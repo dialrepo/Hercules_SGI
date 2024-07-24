@@ -67,23 +67,79 @@ Para desplegar el cluster de kubernetes hay que configurar ciertos ficheros:
 az login
 ```
 
+Este paso abre un navegador e indica que te lo logees con la cuenta de azure. Haces login en el navegador y si todo va bien cierras la ventana y en la ventana de línea de comandos pulsas enter y continuas. 
+
 * Cree un grupo de recursos de Azure.
-En el ejemplo siguiente, se crea un grupo de recursos denominado myResourceGroup en la ubicación eastus.
+En el ejemplo siguiente, se crea un grupo de recursos denominado resourceGroupAks en la ubicación westeurope (esta debería ser la más cercana a nuestra localidad).
 ```sh
-az group create --name myResourceGroup --location eastus
+az group create --name resourceGroupAks --location westeurope
 ```
+Obtendremos una respuesta como esta
+{
+  "id": "/subscriptions/d8d059d3-fd4d-4b00-8126-2457bf1ba422/resourceGroups/resourceGroupAks",
+  "location": "westeurope",
+  "managedBy": null,
+  "name": "resourceGroupAks",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+* Si no hay capacidad se puede crear en otra zona: northeurope
+```sh
+az group create --name resourceGroupAksNE --location northeurope
+```
+{
+  "id": "/subscriptions/d8d059d3-fd4d-4b00-8126-2457bf1ba422/resourceGroups/resourceGroupAksNE",
+  "location": "northeurope",
+  "managedBy": null,
+  "name": "resourceGroupAksNE",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+lmat
+
+
+Se puede comprobar también con este comando: **az group show --name resourceGroupAks**
 
 * Crear el clúster de AKS
 ```sh
-az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
+az aks create --resource-group resourceGroupAks --name clusterSgiDev --node-count 1 --enable-addons monitoring --generate-ssh-keys --location westeurope
 ```
-az aks create --resource-group myResourceGroup --name myAKSCluster --location eastus --attach-acr myhelmacr --generate-ssh-keys
+Te muestra una salida como esta:
+SSH key files '/home/lmatarrubia/.ssh/id_rsa' and '/home/lmatarrubia/.ssh/id_rsa.pub' have been generated under ~/.ssh to allow SSH access to the VM. If using machines without permanent storage like Azure Cloud Shell without an attached file share, back up your keys to a safe location
+Resource provider 'Microsoft.OperationalInsights' used by this operation is not registered. We are registering for you.
 
+Si muestra este error:
+_Conflict({"error":{"code":"MissingSubscriptionRegistration","message":"The subscription is not registered to use namespace 'microsoft.insights'. See https://aka.ms/rps-not-found for how to register subscriptions.","details":[{"code":"MissingSubscriptionRegistration","target":"microsoft.insights","message":"The subscription is not registered to use namespace 'microsoft.insights'. See https://aka.ms/rps-not-found for how to register subscriptions."}]}})_
+
+Hay que realizar este paso adicional: 
+    * Registrar el proveedor de recursos microsoft.insights
+```sh
+az provider register --namespace microsoft.insights
+```
+    * Verificar la registración del proveedor de recursos
+```sh
+az provider show --namespace microsoft.insights --query "registrationState"
+```
+Y una vez haya funcionado se puede volver a intentar crear el cluster.
+
+* O si no hay capacidad se puede crear en otra zona: northeurope
+```sh
+az aks create --resource-group resourceGroupAksNE --name clusterSgiDev --node-count 1 --enable-addons monitoring --generate-ssh-keys --location northeurope
+```
+
+Se podrá comprobar también con este comando: **az aks list --resource-group resourceGroupAks -o table**
 
 * Conectar kubectl al clúster de AKS.
-En el comando siguiente, se obtienen las credenciales del clúster de AKS llamado myAKSCluster en myResourceGroup.
+En el comando siguiente, se obtienen las credenciales de acceso del clúster de AKS llamado clusterSgiDev en ese grupo de recursos resourceGroupAksNE
 ```sh
-az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+az aks get-credentials --resource-group resourceGroupAksNE --name clusterSgiDev
 ```
 
 ## _Desplegar aplicación con Helm_
