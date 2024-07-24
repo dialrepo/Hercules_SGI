@@ -9,7 +9,7 @@ https://github.com/HerculesCRUE/SGI
 
 ## _Visual Studio Code_
 
-**BACKEND**
+### **BACKEND**
 
 Previo al código se deben instalar los pluggins de spring boot y java y maven
 
@@ -18,7 +18,9 @@ Previo al código se deben instalar los pluggins de spring boot y java y maven
 sudo apt install maven
 ```
 * Incluir pluggins en VSCode
+  
 ![pluggintjavavs](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/pluggintjavavs.jpg)
+
 ![pluggintspvs](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/pluggintspvs.jpg)
 
 Como no hay un nexus, nos apoyamos en el repositorio local y hay que tener cuidado con el orden de construcción:
@@ -44,10 +46,12 @@ mvn clean compile
 * En este punto, pasada la fase de compilación, es necesario configurar en cada módulo la url  del keycloak dentro del fichero _application.yml (src/main/resources)_ en el profile activo por defecto.
 
 ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_keycloak.jpg)
+
 En el profile de dev lo que aparece es el ajuste de log.
 El resto de valores no sería necesario cambiarlos porque por defecto levanta una propia bbdd h2 y esto de inicio carga los changeset, los cambios de liquibase, crearía el esquema de bbdd, etc. Si se requiere utilizar otra bbdd sería necesario realizar los ajustes de la conexión jdbc, driver, usuario y contraseña, dialecto y esquema. 
 
 Hay otros módulos que tienen algo más de configuración:
+
    5.1 El módulo de ética depende de otros servicios por lo que será necesario configurar las urls correspondientes a los endpoints de comunicación interna para que apunten a los servicios del entorno de IC que tengamos levantado o localhost si lo tenemos levantado en local. 
 
 ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_eti.jpg)
@@ -55,14 +59,12 @@ Hay otros módulos que tienen algo más de configuración:
    5.2 El módulo de comunicación al igual que el de ética depende de otros servicios por lo que es necesario configurar las urls correspondientes y además si se necesita que la parte de envío de email funcione correctamente se debe configurar los datos del servidor de correo.   
 
 ![config_keycloak](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/config_com.jpg)
-
-   5.3 TO DO:  revisar si hay más módulos especiales.
     
 6. Configuración de base de datos → por defecto se levanta una base de datos H2 y se carga el esquema de liquibase. Por lo que si se requiere otra base de datos será necesario configurar en la parte del fichero para tal efecto.
 
 Para cambios de bbdd sería necesario la carpeta db en _./target/db_ y al volver a arrancarlos para que se refresquen los cambios.
 
-**FRONTEND**
+### **FRONTEND**
 
 Previo al código:
 * Instalar node, npm y ng y angular CLI si aun no está instalado localmente en tu proyecto
