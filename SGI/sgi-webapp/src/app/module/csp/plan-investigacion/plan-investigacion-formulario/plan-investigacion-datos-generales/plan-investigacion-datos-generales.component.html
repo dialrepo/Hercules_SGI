@@ -1,0 +1,37 @@
+<sgi-fragment title="{{'label.datos-generales' | translate}}">
+  <form [formGroup]="formGroup">
+    <!-- Nombre -->
+    <div [fxLayout]="fxLayoutProperties.layout" [fxLayoutAlign]="fxLayoutProperties.layoutAlign">
+      <div [fxFlex.sm]="fxFlexProperties.sm" [fxFlex.md]="fxFlexProperties.md" [fxFlex.gt-md]="fxFlexProperties.gtMd"
+        [fxFlexOrder]="fxFlexProperties.order">
+        <mat-form-field fxFill>
+          <mat-label>{{'csp.plan-investigacion.nombre' | translate}}</mat-label>
+          <input matInput formControlName="nombre" type="text" id="nombre"
+            placeholder="{{'csp.plan-investigacion.nombre' | translate}}" required>
+          <mat-error *ngIf="formGroup.controls.nombre.errors?.required">
+            {{'error.required.entity' | translate:msgParamNombreEntity}}
+          </mat-error>
+          <mat-error *ngIf="formGroup.controls.nombre.errors?.maxlength">
+            {{'error.maxlength.entity' | translate:msgParamNombreEntity}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Descripción -->
+    <div [fxLayout]="fxLayoutProperties.layout" [fxLayoutAlign]="fxLayoutProperties.layoutAlign">
+      <div [fxFlex.sm]="fxFlexProperties.sm" [fxFlex.md]="fxFlexProperties.md" [fxFlex.gt-md]="fxFlexProperties.gtMd"
+        [fxFlexOrder]="fxFlexProperties.order">
+        <mat-form-field fxFill>
+          <mat-label>{{'csp.plan-investigacion.descripcion' | translate}}</mat-label>
+          <textarea matInput formControlName="descripcion" id="descripcion"
+            placeholder="{{'csp.plan-investigacion.descripcion' | translate}}"></textarea>
+          <mat-error *ngIf="formGroup.controls.descripcion.errors?.maxlength">
+            {{'error.maxlength.entity' | translate:msgParamDescripcionEntity}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+  </form>
+</sgi-fragment>

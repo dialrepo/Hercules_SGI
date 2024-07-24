@@ -1,0 +1,23 @@
+<sgi-action-dialog [title]="title">
+  <form [formGroup]="formGroup">
+    <!-- Nombre -->
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>{{'csp.tipo-enlace.nombre' | translate}}</mat-label>
+        <input matInput formControlName="nombre" type="text" placeholder="{{'csp.tipo-enlace.nombre' | translate}}"
+          required>
+        <mat-error *ngIf="formGroup.controls.nombre.errors?.required">
+          {{'error.required.entity' | translate:msgParamNombreEntity}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- Descripción -->
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>{{'csp.tipo-enlace.descripcion' | translate}}</mat-label>
+        <textarea matInput formControlName="descripcion"
+          placeholder="{{'csp.tipo-enlace.descripcion' | translate}}"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</sgi-action-dialog>

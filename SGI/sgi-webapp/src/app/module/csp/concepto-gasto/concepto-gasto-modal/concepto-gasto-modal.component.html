@@ -1,0 +1,37 @@
+<sgi-action-dialog [title]="title">
+  <form [formGroup]="formGroup">
+    <!-- Nombre -->
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>{{'csp.concepto-gasto.nombre' | translate}}</mat-label>
+        <input matInput formControlName="nombre" type="text" placeholder="{{'csp.concepto-gasto.nombre' | translate}}"
+          required>
+        <mat-error *ngIf="formGroup.controls.nombre.errors?.required">
+          {{'error.required.entity' | translate:msgParamNombreEntity}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- Descripción -->
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>{{'csp.concepto-gasto.descripcion' | translate}}</mat-label>
+        <textarea matInput formControlName="descripcion"
+          placeholder="{{'csp.concepto-gasto.descripcion' | translate}}"></textarea>
+      </mat-form-field>
+    </div>
+    <!--Costes Indirectos-->
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>{{'label.csp.concepto-gasto.costes-indirectos' | translate}}
+        </mat-label>
+        <sgi-select-boolean formControlName="costesIndirectos" required></sgi-select-boolean>
+        <sgi-field-info matSuffix visible="true"
+          message="{{'csp.concepto-gasto.costes-indirectos.tooltip' | translate}}">
+        </sgi-field-info>
+        <mat-error *ngIf="formGroup.controls.costesIndirectos.errors?.required">
+          {{'error.required.entity' | translate:msgParamCostesIndirectos}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</sgi-action-dialog>
