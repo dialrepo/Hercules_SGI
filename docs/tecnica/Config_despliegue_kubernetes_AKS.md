@@ -221,8 +221,8 @@ En este caso hemos probado con un  Ingress Controller
   apiVersion: networking.k8s.io/v1
   kind: Ingress
   metadata:
-    name: my-app-ingress
-    namespace: my-namespace
+    name: sgi-ingress
+    namespace: sgi-dev
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
   spec:
@@ -238,11 +238,16 @@ En este caso hemos probado con un  Ingress Controller
               port:
                 number: 80
   ```
+
   
-  name: sgi-ingress
-  namespace: sgi-dev (namespace que se ha creado para la aplicación kubectl)
+  name: nombre para ingress
+  
+  namespace: namespace que se ha creado para la aplicación kubectl
+  
   host: tu dominio del cluster
+  
   name: el nombre del servicio Kubernetes
+  
   
   * Y aplicamos la configuración
   ```sh
