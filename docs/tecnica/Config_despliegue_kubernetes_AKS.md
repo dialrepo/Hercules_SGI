@@ -141,6 +141,11 @@ En el comando siguiente, se obtienen las credenciales de acceso del clúster de 
 ```sh
 az aks get-credentials --resource-group resourceGroupAksNE --name clusterSgiDev
 ```
+* Se pueden consultar los contextos y ver el actual
+```sh
+ kubectl config get-contexts
+ kubectl config current-context
+```
 
 ## _Desplegar aplicación con Helm_
 
@@ -213,6 +218,8 @@ spec:
               number: 80
 ```
 
+name: sgi-ingress
+namespace: sgi-dev (namespace que se ha creado para la aplicación kubectl)
 host: tu dominio del cluster
 name: el nombre del servicio Kubernetes
 
