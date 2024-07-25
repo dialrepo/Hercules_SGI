@@ -119,14 +119,17 @@ Si muestra este error:
 _Conflict({"error":{"code":"MissingSubscriptionRegistration","message":"The subscription is not registered to use namespace 'microsoft.insights'. See https://aka.ms/rps-not-found for how to register subscriptions.","details":[{"code":"MissingSubscriptionRegistration","target":"microsoft.insights","message":"The subscription is not registered to use namespace 'microsoft.insights'. See https://aka.ms/rps-not-found for how to register subscriptions."}]}})_
 
 Hay que realizar este paso adicional: 
-    * Registrar el proveedor de recursos microsoft.insights
+    
+* Registrar el proveedor de recursos microsoft.insights
 ```sh
 az provider register --namespace microsoft.insights
 ```
-    * Verificar la registración del proveedor de recursos
+  
+* Verificar la registración del proveedor de recursos
 ```sh
 az provider show --namespace microsoft.insights --query "registrationState"
 ```
+
 Y una vez haya funcionado se puede volver a intentar crear el cluster.
 
 * O si no hay capacidad se puede crear en otra zona: northeurope
@@ -178,67 +181,6 @@ _--namespace sgi-dev_: especifica el namespace donde se debe instalar o actualiz
 _values.demo.yaml_:fichero de configuración del chart sgi-umbrella
 
 
-## _Instalar un Ingress Controller en AKS_
-
-* Añadir el repositorio de Helm para NGINX Ingress Controller
-```sh
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm repo update
-```
-
-* Instalar el Ingress 
-```sh
-helm install nginx-ingress ingress-nginx/ingress-nginx \
-  --namespace ingress-basic \
-  --create-namespace
-```
-Esto instalará el NGINX Ingress Controller en el namespace ingress-basic.
-
-Una vez está instalado necesitamos configurar un recurso Ingress que defina cómo el tráfico debe ser enrutado a los servicios:
-* Crear un archivo de configuración de Ingress ingress.yaml con el siguiente contenido:
-```javascript
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-app-ingress
-  namespace: my-namespace
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-  - host: http://dev.hercules-sgi.local/
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: sgi-service
-            port:
-              number: 80
-```
-
-name: sgi-ingress
-namespace: sgi-dev (namespace que se ha creado para la aplicación kubectl)
-host: tu dominio del cluster
-name: el nombre del servicio Kubernetes
-
-* Y aplicamos la configuración
-```sh
-kubectl apply -f ingress.yaml
-```
-
-* Obtener la IP pública del Ingress Controller
-Para acceder desde fuera del clúster, obtenemosla IP pública asignada al Ingress Controller ejecutando el siguiente comando:
-```sh
-kubectl get svc -n ingress-basic
-```
-Buscamos el servicio de tipo LoadBalancer creado por el Ingress Controller y nos quedamos con la IP externa.
-
-* Añadimos el dominio con la IP pública en el fichero de hosts
-x.x.x.x dev.hercules-sgi.local
-
-
 ## _Verificar el despliegue_
 
 * Revisar los Pods en el namespace
@@ -255,8 +197,71 @@ kubectl get svc --namespace sgi-dev
 * Configurar el acceso a la aplicación:
 
 Dependiendo de la configuración de tu Chart de Helm, puede que necesites configurar un Ingress Controller o un LoadBalancer para acceder a la aplicación externamente.
+En este caso hemos probado con un  Ingress Controller 
+
+## _Instalar un Ingress Controller en AKS_
+  
+  * Añadir el repositorio de Helm para NGINX Ingress Controller
+  ```sh
+  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  helm repo update
+  ```
+  
+  * Instalar el Ingress 
+  ```sh
+  helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace ingress-basic \
+    --create-namespace
+  ```
+  Esto instalará el NGINX Ingress Controller en el namespace ingress-basic.
+  
+  Una vez está instalado necesitamos configurar un recurso Ingress que defina cómo el tráfico debe ser enrutado a los servicios:
+  * Crear un archivo de configuración de Ingress ingress.yaml con el siguiente contenido:
+  ```javascript
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: my-app-ingress
+    namespace: my-namespace
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    rules:
+    - host: dev.hercules-sgi.local
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: sgi-webapp
+              port:
+                number: 80
+  ```
+  
+  name: sgi-ingress
+  namespace: sgi-dev (namespace que se ha creado para la aplicación kubectl)
+  host: tu dominio del cluster
+  name: el nombre del servicio Kubernetes
+  
+  * Y aplicamos la configuración
+  ```sh
+  kubectl apply -f ingress.yaml
+  ```
+  
+  * Obtener la IP pública del Ingress Controller
+  Para acceder desde fuera del clúster, obtenemosla IP pública asignada al Ingress Controller ejecutando el siguiente comando:
+  ```sh
+  kubectl get svc -n ingress-basic
+  ```
+  Buscamos el servicio de tipo LoadBalancer creado por el Ingress Controller y nos quedamos con la IP externa.
+  
+  * Añadimos el dominio con la IP pública en el fichero de hosts
+  x.x.x.x dev.hercules-sgi.local
+
 
 * Revisar los detalles del servicio:
 ```sh
 kubectl describe svc <service-name> --namespace my-namespace
 ```
+Ejemplo: kubectl describe svc sgi-sgi-webapp --namespace sgi-dev
