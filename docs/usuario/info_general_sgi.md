@@ -22,11 +22,11 @@ Requisitos de integración: https://confluence.um.es/confluence/pages/viewpage.a
 https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853565
 
 * En estos apartados se puede encontrar la información de los módulos funcionales del SGI
-- Módulo CSP: https://confluence.um.es/confluence/pages/viewpage.action?pageId=59785383
-- Módulo PRC: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852527
-- Módulo PII: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853838
-- Módulo ETI: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853840
-- Módulo EER: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853839
+     - Módulo CSP: https://confluence.um.es/confluence/pages/viewpage.action?pageId=59785383
+     - Módulo PRC: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852527
+     - Módulo PII: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853838
+     - Módulo ETI: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853840
+     - Módulo EER: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853839
 
 * En este enlace se consultar la información del modelo logico por componente
 https://confluence.um.es/confluence/display/HERCULES/Componentes
@@ -46,14 +46,14 @@ https://jira.treelogic.com/login.jsp?os_destination=%2Fsecure%2FRapidBoard.jspa%
 
 
 * Manual de usuario
-- Perfil Investigador: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852733
-- Perfil por unidad de gestión: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852718 
-- Perfil administración del sistema: https://confluence.um.es/confluence/pages/viewpage.action?pageId=721420329 
+     - Perfil Investigador: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852733
+     - Perfil por unidad de gestión: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852718 
+     - Perfil administración del sistema: https://confluence.um.es/confluence/pages/viewpage.action?pageId=721420329 
 
 * Integraciones
-- Guia de implantación: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853447
-- Integración SGI-Dialnet: https://confluence.um.es/confluence/pages/viewpage.action?pageId=857636867
-- Apis de integracion: 
+     - Guia de implantación: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853447
+     - Integración SGI-Dialnet: https://confluence.um.es/confluence/pages/viewpage.action?pageId=857636867
+     - Apis de integracion: 
 https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853450
 https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147612
 
