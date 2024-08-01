@@ -1,7 +1,0 @@
-@import "colors.scss";
-
-:host {
-  .mat-row.selected {
-    background: map-get($palette-grey, 100);
-  }
-}

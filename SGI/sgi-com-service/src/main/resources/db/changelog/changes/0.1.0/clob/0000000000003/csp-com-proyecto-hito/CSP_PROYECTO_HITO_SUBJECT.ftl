@@ -1,1 +1,0 @@
-Hito ${CSP_HITO_TIPO} del proyecto ${CSP_PROYECTO_TITULO}<#if CSP_CONVOCATORIA_TITULO?has_content> de la convocatoria ${CSP_CONVOCATORIA_TITULO}</#if>

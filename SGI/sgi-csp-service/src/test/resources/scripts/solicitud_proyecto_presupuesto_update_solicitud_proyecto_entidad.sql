@@ -1,2 +1,0 @@
-UPDATE test.solicitud_proyecto_presupuesto
-SET solicitud_proyecto_entidad_id = 1;

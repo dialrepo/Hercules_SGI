@@ -1,1 +1,0 @@
-Hito "${CSP_HITO_TIPO}" de la solicitud "${CSP_SOLICITUD_TITULO}" de la convocatoria "${CSP_CONVOCATORIA_TITULO}"

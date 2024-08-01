@@ -1,3 +1,0 @@
-export const EMPRESA_EXPLOTACION_RESULTADOS_ROUTE_PARAMS = {
-  ID: 'empresaId'
-};

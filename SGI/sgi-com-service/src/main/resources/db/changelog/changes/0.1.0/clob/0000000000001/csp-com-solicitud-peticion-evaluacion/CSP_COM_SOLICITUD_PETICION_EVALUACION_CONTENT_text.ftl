@@ -1,2 +1,0 @@
-Estimado/a investigador/a,
-le informamos de que es necesario someter su investigación ante la Comisión de Ética, por lo que se ha creado una solicitud de petición de evaluación con el código "${ETI_PETICION_EVALUACION_CODIGO}" asociada a la solicitud de convocatoria "${CSP_SOLICITUD_CODIGO}".
