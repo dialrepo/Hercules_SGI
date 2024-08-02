@@ -1,34 +1,31 @@
 ### Esquema de posible configuración entorno CI/CD
 
 **Pasos previos**
-* Tener configurada una cuenta de azure
-* Tener configurado azure CLI en una máquina virtual con kubectl
 
-Para este paso hay que tener creada una VM en Azure quese puede haber usado el portal y configurado kubectl y az:
+* Tener configurada una cuenta de azure para el cluster de kubernetes
+
+* Tener una servidor local o una máquina virtual. Si es este segundo se puede crear una VM en Azure usando el portal.
+Además se requiere tener instalado:
+    - SO Linux
+    - Git
+    - JDK y Maven para Java.
+    - Soporte para el modelo de datos sería Postgresql u Oracle
+    - Node para el desarrollo de angular y una librería especifica que tienen angular-material-components.
+    - Make para ficheros Makefiles
+    - Dockers (Para la gestión de los contenedores)
+    
+Y para el Cluster de Aks
+    - Kubectl (Para la gestión del clúster de Kubernetes)
+    - Helm
+    - Cluster de Kubernetes ( ver más detalle en el documento _Config_despliegue_kubernetes_AKS.md_ )
+    - Azure CLI -- > Para este paso se puede configurado kubectl y az:
 
      * Instalar Azure CLI
      ```sh
      curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
      ```
-     * Iniciar sesión en Azure
-     ```sh
-     az login
-     ```
-     * Instalar kubectl
-     ```sh
-     az aks install-cli
-     ```
-     * Configurar kubectl para acceder al clúster
-     ```sh
-     az aks get-credentials --resource-group <your-resource-group> --name <your-cluster-name>
-     ```
-
-
-* Tener configurado el cluster de Aks
-Más detalle en el documento _Config_despliegue_kubernetes_AKS.md_
-   -- Si queremos persistencia habrá que realizar más pasos de configuración
-
-* Tener servidor SonarQube configurado y accesible, y de que el proyecto en SonarQube esté configurado correctamente en la pipeline
+     
+* Tener SonarQube configurado y accesible, y de que el proyecto en SonarQube esté configurado correctamente en la pipeline
 
 
 **Compilar y desplegar el proyecto de SGI de Github**
