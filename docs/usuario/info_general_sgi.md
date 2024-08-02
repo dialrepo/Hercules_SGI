@@ -4,7 +4,8 @@
 * En un entorno de producción el acceso se puede hacer con el usuario de la propia universidad.
 
 Detallan la información del sistema en confluence
-https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852519
+     - Confluence: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852519
+     - Página SGI de la Universidad de Murcia: https://www.um.es/web/hercules/proyectos/sgi
 
 ## _Documentación_
 
@@ -36,7 +37,7 @@ https://confluence.um.es/confluence/display/HERCULES/Bases+de+datos
 https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147668
 
 * Algunos estándares de desarrollo aunque no está completo
-https://confluence.um.es/confluence/display/HERCULES/Consultas+filtradas+y+paginadas
+https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853781
 
 * Incluye información de como reportar incidencias
 https://confluence.um.es/confluence/display/HERCULES/Pruebas+de+usuario
@@ -46,6 +47,7 @@ https://jira.treelogic.com/login.jsp?os_destination=%2Fsecure%2FRapidBoard.jspa%
 
 
 * Manual de usuario
+https://confluence.um.es/confluence/display/HERCULES/MDU+-+Manual+de+usuario
      - Perfil Investigador: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852733
      - Perfil por unidad de gestión: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597852718 
      - Perfil administración del sistema: https://confluence.um.es/confluence/pages/viewpage.action?pageId=721420329 
@@ -53,9 +55,11 @@ https://jira.treelogic.com/login.jsp?os_destination=%2Fsecure%2FRapidBoard.jspa%
 * Integraciones
      - Guia de implantación: https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853447
      - Integración SGI-Dialnet: https://confluence.um.es/confluence/pages/viewpage.action?pageId=857636867
-     - Apis de integracion: 
-https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853450
-https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147612
+     - Apis de integracion del ESB https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853450
+          - Casos de uso implementados por la UM https://confluence.um.es/confluence/display/HERCULES/Caso+de+uso%3A+servicios+implementados+por+la+Universidad+de+Murcia
+     - Apis de integracion que detallan y documentan las APIs que los distintos componentes y módulos Hércules ofrecen y consumen:
+          - Página general: https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147612
+          - Lista de servicios que un tercero deberá desarrollar: https://confluence.um.es/confluence/display/HERCULES/SGI%3A+Servicios+de+terceros+que+consume
 
 
 
