@@ -10,55 +10,54 @@ https://github.com/hercules-sgi/sgi-helm
 ### Conectarse a la suscripción y crear un cluster
 ![crear_cluster](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/Crear_cluster_portal_azure.jpg)
 
-Se deben configurar los datos. 
-Estos son los del cluster demo creado para el sgi
+Se deben configurar los datos. Aquí se muestran los del cluster demo creado para el sgi:
 
 ### Datos básicos 
-Suscripción: Pay-As-You-Go 
-Grupo de recursos: grupo_recursos_aks 
-Región: Spain Central 
-Nombre del clúster de Kubernetes: sgi_demo 
-Versión de Kubernetes: 1.29.7 
-Actualización automática: none 
-Programador de actualización automática: - 
-Tipo de canal de seguridad de nodo: None 
-Programador de canal de seguridad: - 
+- Suscripción: Pay-As-You-Go 
+- Grupo de recursos: grupo_recursos_aks 
+- Región: Spain Central 
+- Nombre del clúster de Kubernetes: sgi_demo 
+- Versión de Kubernetes: 1.29.7 
+- Actualización automática: none 
+- Programador de actualización automática: - 
+- Tipo de canal de seguridad de nodo: None 
+- Programador de canal de seguridad: - 
 
 ### Grupos de nodos 
-Grupos de nodos: 1 
-Habilitar nodos virtuales: Deshabilitada 
+- Grupos de nodos: 1 
+- Habilitar nodos virtuales: Deshabilitada 
 
 ### Acceso 
-Identidad del recurso: System-assigned managed identity 
-Cuentas locales: Habilitado 
-Autenticación y autorización: Cuentas locales con RBAC de Kubernetes 
-Tipo de cifrado: (Predeterminado) Cifrado en reposo con una clave administrada por la plataforma 
+- Identidad del recurso: System-assigned managed identity 
+- Cuentas locales: Habilitado 
+- Autenticación y autorización: Cuentas locales con RBAC de Kubernetes 
+- Tipo de cifrado: (Predeterminado) Cifrado en reposo con una clave administrada por la plataforma 
 
 ### Redes 
-Clúster privado: Deshabilitada 
-Intervalos IP autorizados: Deshabilitada 
-Configuración de red: Superposición de Azure CNI 
-Prefijo de nombre DNS: demo 
-Directiva de red: Ninguno 
-Equilibrador de carga: Standard 
+- Clúster privado: Deshabilitada 
+- Intervalos IP autorizados: Deshabilitada 
+- Configuración de red: Superposición de Azure CNI 
+- Prefijo de nombre DNS: demo 
+- Directiva de red: Ninguno 
+- Equilibrador de carga: Standard 
 
 ### Integraciones 
-Microsoft Defender for Cloud: Free 
-Registro de contenedor: Ninguno 
-Malla de servicio: Deshabilitada 
-Azure Policy: Deshabilitada 
+- Microsoft Defender for Cloud: Free 
+- Registro de contenedor: Ninguno 
+- Malla de servicio: Deshabilitada 
+- Azure Policy: Deshabilitada 
 
 ### Supervisión 
-Habilitar registros de contenedor: Deshabilitada 
-Habilitar métricas de Prometheus: Deshabilitada 
-Habilitar Grafana: Deshabilitada 
-Alertas: Deshabilitada 
+- Habilitar registros de contenedor: Deshabilitada 
+- Habilitar métricas de Prometheus: Deshabilitada 
+- Habilitar Grafana: Deshabilitada 
+- Alertas: Deshabilitada 
 
 ### Avanzado 
-Grupo de recursos de infraestructura: MC_grupo_recursos_aks_sgi_demo_spaincentral 
+- Grupo de recursos de infraestructura: MC_grupo_recursos_aks_sgi_demo_spaincentral 
 
 ### Etiquetas 
-Ninguno 
+- Ninguno 
 
 ## _Conectar al cluster y desplegar la aplicación_
 
@@ -70,7 +69,7 @@ Ninguno
   Este paso abre un navegador e indica que te lo logees con la cuenta de azure. Haces login en el navegador y si todo va bien cierras la ventana y regresas a la ventana de línea de comandos.
   Ahora se muestran las suscripciones disponibles y se debe seleccionar la que corresponda.
 
-  * Comando para establecer la suscripción del clúster
+* Comando para establecer la suscripción del clúster
   ```sh
   az account set --subscription <numero de la subscripcion>
   ```
