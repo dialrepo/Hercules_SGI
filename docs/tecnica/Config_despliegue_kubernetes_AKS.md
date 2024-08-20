@@ -150,6 +150,23 @@ az aks get-credentials --resource-group resourceGroupAksNE --name clusterSgiDev
  kubectl config current-context
 ```
 
+## _Configuración Ingress_
+  * Aplicamos la configuración para el Ingress para acceder a la aplicación externamente
+  ```sh
+  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+  ```
+  
+  * Obtener la IP pública 
+  Para acceder desde fuera del clúster, obtenemosla IP pública asignada ejecutando el siguiente comando:
+  ```sh
+  kubectl get ing
+  ```
+  
+  * Añadimos el dominio con la IP pública en el fichero de hosts
+  x.x.x.x dev.hercules-sgi.local
+
+
+
 ## _Desplegar aplicación con Helm_
 
 * Navegamos a la carpeta donde se haya descargado el repositorio y tengas el proyecto 
@@ -164,20 +181,22 @@ Esto genera un paquete **sgi-umbrella-x.x.x.tgz** que usaremos para desplegar
 
 * Crear un namespace
 ```sh
-kubectl create namespace sgi-dev
+kubectl create namespace sgi-demo
 ```
-kubectl config set-context --current --namespace=sgi-dev
-Este comando es opcional ya que configura el contexto actual de kubectl para usar el namespace sgi-dev de forma predeterminada.
+Y adicionalmente se recomienda ejecutar este comando ya que configura el contexto actual de kubectl para usar el namespace sgi-demo de forma predeterminada
+```sh
+kubectl config set-context --current --namespace=sgi-demo
+```
 
 * Desplegar la aplicación usando **sgi-umbrella-x.x.x.tgz**  (actualizar o instala un chart en el cluster)
 
 ```sh
-helm upgrade sgi sgi-umbrella-0.1.46.tgz --install --namespace sgi-dev -f ./config/values.demo.yaml
+helm upgrade sgi sgi-umbrella-0.1.46.tgz --install --namespace sgi-demo -f ./config/values.demo.yaml
 ```
 _sgi_: es el nombre del release en Helm
 _--install_: Este flag indica que, si el release sgi no existe, Helm debe instalarlo en lugar de simplemente actualizar un release existente.
 _sgi-umbrella-0.1.46.tgz_: es el paquete del Chart de Helm que se va a usar para la actualización/instalación y contiene todos los recursos para desplegar el sgi.
-_--namespace sgi-dev_: especifica el namespace donde se debe instalar o actualizar el release.
+_--namespace sgi-demo_: especifica el namespace donde se debe instalar o actualizar el release.
 _values.demo.yaml_:fichero de configuración del chart sgi-umbrella
 
 
@@ -185,88 +204,18 @@ _values.demo.yaml_:fichero de configuración del chart sgi-umbrella
 
 * Revisar los Pods en el namespace
 ```sh
-kubectl get pods --namespace sgi-dev
+kubectl get pods --namespace sgi-demo
 ```
 
-* Revisar los servicios
+* Revisar los servicios:
 ```sh
-kubectl get svc --namespace sgi-dev
+kubectl get svc --namespace sgi-demo
 ```
-
-## _Acceso a la aplicación_
-* Configurar el acceso a la aplicación:
-
-Dependiendo de la configuración de tu Chart de Helm, puede que necesites configurar un Ingress Controller o un LoadBalancer para acceder a la aplicación externamente.
-En este caso hemos probado con un  Ingress Controller 
-
-## _Instalar un Ingress Controller en AKS_
-  
-  * Añadir el repositorio de Helm para NGINX Ingress Controller
-  ```sh
-  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-  helm repo update
-  ```
-  
-  * Instalar el Ingress 
-  ```sh
-  helm install nginx-ingress ingress-nginx/ingress-nginx \
-    --namespace ingress-basic \
-    --create-namespace
-  ```
-  Esto instalará el NGINX Ingress Controller en el namespace ingress-basic.
-  
-  Una vez está instalado necesitamos configurar un recurso Ingress que defina cómo el tráfico debe ser enrutado a los servicios:
-  * Crear un archivo de configuración de Ingress ingress.yaml con el siguiente contenido:
-  ```javascript
-  apiVersion: networking.k8s.io/v1
-  kind: Ingress
-  metadata:
-    name: sgi-ingress
-    namespace: sgi-dev
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /
-  spec:
-    rules:
-    - host: dev.hercules-sgi.local
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: sgi-webapp
-              port:
-                number: 80
-  ```
-
-  
-  name: nombre para ingress
-  
-  namespace: namespace que se ha creado para la aplicación kubectl
-  
-  host: tu dominio del cluster
-  
-  name: el nombre del servicio Kubernetes
-  
-  
-  * Y aplicamos la configuración
-  ```sh
-  kubectl apply -f ingress.yaml
-  ```
-  
-  * Obtener la IP pública del Ingress Controller
-  Para acceder desde fuera del clúster, obtenemosla IP pública asignada al Ingress Controller ejecutando el siguiente comando:
-  ```sh
-  kubectl get svc -n ingress-basic
-  ```
-  Buscamos el servicio de tipo LoadBalancer creado por el Ingress Controller y nos quedamos con la IP externa.
-  
-  * Añadimos el dominio con la IP pública en el fichero de hosts
-  x.x.x.x dev.hercules-sgi.local
-
 
 * Revisar los detalles del servicio:
 ```sh
 kubectl describe svc <service-name> --namespace my-namespace
 ```
-Ejemplo: kubectl describe svc sgi-sgi-webapp --namespace sgi-dev
+Ejemplo: kubectl describe svc sgi-sgi-webapp --namespace sgi-demo
+
+
