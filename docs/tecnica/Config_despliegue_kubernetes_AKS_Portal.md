@@ -110,6 +110,7 @@ kubectl create namespace sgi-demo
 Y adicionalmente se recomienda ejecutar este comando ya que configura el contexto actual de kubectl para usar el namespace sgi-demo de forma predeterminada
 ```sh
 kubectl config set-context --current --namespace=sgi-demo
+kubectl config set-context --current --namespace=sgi-demo
 ```
 
 * Desplegar la aplicación usando **sgi-umbrella-x.x.x.tgz**  (actualizar o instala un chart en el cluster)
