@@ -78,3 +78,19 @@ kubectl config use-context minikube
 kubectl config current-context
 ```
 
+* Acceder a la bbdd o panel keycloak
+```sh
+kubectl port-forward sgi-postgresql-0 5432:5432 -n sgi-demo
+```
+
+```sh
+kubectl port-forward sgi-sgi-keycloak-67995bdc5d-n5crh 8080:8080 -n sgi-demo
+```
+
+kubectl port-forward sgi-sgi-keycloak-69d8f4988-hbcm8 8080:8080 -n sgi-demo
+
+* Obtener la ip.
+```sh
+kubectl get ing -n sgi-demo
+```
+

@@ -37,7 +37,7 @@ Se deben configurar los datos. Aquí se muestran los del cluster demo creado par
 - Clúster privado: Deshabilitada 
 - Intervalos IP autorizados: Deshabilitada 
 - Configuración de red: Superposición de Azure CNI 
-- Prefijo de nombre DNS: demo 
+- Prefijo de nombre DNS: sgi-demo 
 - Directiva de red: Ninguno 
 - Equilibrador de carga: Standard 
 
