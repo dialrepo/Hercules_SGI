@@ -57,8 +57,9 @@ https://confluence.um.es/confluence/display/HERCULES/MDU+-+Manual+de+usuario
 * Integración SGI-Dialnet: https://confluence.um.es/confluence/pages/viewpage.action?pageId=857636867
 * Apis de integracion del ESB https://confluence.um.es/confluence/pages/viewpage.action?pageId=597853450
 * Casos de uso implementados por la UM https://confluence.um.es/confluence/display/HERCULES/Caso+de+uso%3A+servicios+implementados+por+la+Universidad+de+Murcia
-* Apis de integracion que detallan y documentan las APIs que los distintos componentes y módulos Hércules ofrecen y consumen:
+* Apis de integracion que detallan y documentan las APIs que los distintos componentes y módulos Hércules ofrecen y consumen
+  https://confluence.um.es/confluence/display/HERCULES/SGI%3A+Servicios+de+terceros+que+consume
 * Página general: https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147612
 * Lista de servicios que un tercero deberá desarrollar: https://confluence.um.es/confluence/display/HERCULES/SGI%3A+Servicios+de+terceros+que+consume
 
-* 
+
