@@ -156,10 +156,13 @@
         <mxCell id="33UTWkigAqrjBSKpSig2-68" value="DIALNET ??" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="30" y="890" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="33UTWkigAqrjBSKpSig2-82" value="&lt;ul&gt;&lt;li&gt;Elaborar Pliego de condiciones&lt;/li&gt;&lt;li&gt;Publicar licitación&lt;/li&gt;&lt;li&gt;Recibir ofertas&lt;/li&gt;&lt;li&gt;Evaluar ofertas&lt;/li&gt;&lt;li&gt;Adjudicar contrato&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="33UTWkigAqrjBSKpSig2-82" value="&lt;ul&gt;&lt;li&gt;Elaborar Pliego de condiciones&lt;/li&gt;&lt;li&gt;Publicar licitación&lt;/li&gt;&lt;li&gt;Recibir ofertas&lt;/li&gt;&lt;li&gt;Evaluar ofertas&lt;/li&gt;&lt;li&gt;Adjudicar contrato&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=#d6b656;fillColor=#fff2cc;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="372" y="810" width="220" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="33UTWkigAqrjBSKpSig2-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="33UTWkigAqrjBSKpSig2-84" target="33UTWkigAqrjBSKpSig2-63">
+        <mxCell id="33UTWkigAqrjBSKpSig2-86" value="SI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="33UTWkigAqrjBSKpSig2-84" target="33UTWkigAqrjBSKpSig2-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33UTWkigAqrjBSKpSig2-102" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="33UTWkigAqrjBSKpSig2-84" target="33UTWkigAqrjBSKpSig2-101">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="33UTWkigAqrjBSKpSig2-84" value="¿Empresa contratada?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -179,6 +182,9 @@
         </mxCell>
         <mxCell id="33UTWkigAqrjBSKpSig2-97" value="CRUE" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="680" y="340" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="33UTWkigAqrjBSKpSig2-101" value="??" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="940" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
