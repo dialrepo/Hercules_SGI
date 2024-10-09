@@ -62,4 +62,4 @@ https://confluence.um.es/confluence/display/HERCULES/MDU+-+Manual+de+usuario
 * Página general: https://confluence.um.es/confluence/pages/viewpage.action?pageId=598147612
 * Lista de servicios que un tercero deberá desarrollar: https://confluence.um.es/confluence/display/HERCULES/SGI%3A+Servicios+de+terceros+que+consume
 
-
+### Otra info
