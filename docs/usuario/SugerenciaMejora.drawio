@@ -173,7 +173,7 @@
           <mxGeometry x="25" y="922" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="33UTWkigAqrjBSKpSig2-82" value="&lt;ul&gt;&lt;li&gt;Elaborar Pliego de condiciones&lt;/li&gt;&lt;li&gt;Publicar licitación&lt;/li&gt;&lt;li&gt;Recibir ofertas&lt;/li&gt;&lt;li&gt;Evaluar ofertas&lt;/li&gt;&lt;li&gt;Adjudicar contrato&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=#d6b656;fillColor=#fff2cc;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="372" y="857" width="220" height="100" as="geometry" />
+          <mxGeometry x="372" y="840" width="220" height="100" as="geometry" />
         </mxCell>
         <mxCell id="33UTWkigAqrjBSKpSig2-86" value="SI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="33UTWkigAqrjBSKpSig2-84" target="33UTWkigAqrjBSKpSig2-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
