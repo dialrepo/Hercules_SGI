@@ -40,10 +40,16 @@ The minimum required scopes are 'repo', 'read:org', 'workflow'.
 
 ### Paso 3. Comandos prueba
 Una vez autenticado, GitHub CLI está configurado para trabajar con la cuenta.
+* Lista los repositorios
 ``` sh
 gh repo list
-``` 
+```
+* Lista los proyectos de un repositorio
+``` sh
+gh project list <cuenta_github>/repositorio_git>
+```
 
+* Lista tareas
 ``` sh
 cd <directorio_repositorio_git>
 gh issue list
@@ -53,15 +59,25 @@ Ejemplo:
 ``` sh
 cd /ProjectsGitHub/REPO_HERCULES/Hercules_SGI
 gh issue list
+gh project list dialrepo/SGI 
 ``` 
-Showing 6 of 6 open issues in dialrepo/Hercules_SGI
 
-ID  TITLE                                                                 LABELS             UPDATED          
-#9  HERUM-313 - [CSP] PRO - Buscador por país de socio                    type: BUG          about 2 hours ago
-#7  HERUM-313 - [CSP] PRO - Buscador por país de socio                    type: BUG          about 5 days ago
-#6  HERUM-313 - [CSP] PRO - Buscador por país de socio                    type: BUG          about 5 days ago
-#5  Prueba de tarea para decidir sobre la mejora propuesta en Discussion  type: enhancement  about 1 month ago
-#4  [BUG] Prueba de Bug                                                   type: BUG          about 1 month ago
-#3  Prueba Tarea1          
+
+###  Comandos prueba para crear tareas
+``` sh
+gh issue create --title "[HERUM-283] - [ETI] Error guardar solicitud" --label "type: Error" --project "Prueba_proyecto_UM_27112024" --body "Hola, 
+
+  
+
+al intentar modificar una solicitud existente en producción de [mvp@um.es|mailto:mvp@um.es] que es una investigadora da un error. adjunto logs y pantallazo de error. 
+
+  
+
+La tiene que tner hoy terminada." 
+```
+
+``` sh
+gh issue create --title "[HERUM-297] - [CSP] Error en la  Generación de listados" --body "He filtrado por unidad de getsión OPE y hay 412 proyectos que deberian generarse sin problemas pero da error." --label "type: Error" --project "Prueba_proyecto_UM_27112024" 
+``` 
 
 
