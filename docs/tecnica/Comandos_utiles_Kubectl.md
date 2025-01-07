@@ -94,3 +94,32 @@ kubectl port-forward sgi-sgi-keycloak-69d8f4988-hbcm8 8080:8080 -n sgi-demo
 kubectl get ing -n sgi-demo
 ```
 
+
+az ad sp create-for-rbac --name "MiServicePrincipal" --role contributor --scopes /subscriptions/tu-subscription-id
+Este comando te devolverá un conjunto de credenciales que puedes usar para autenticarte en tus scripts:
+
+appId: Es el ID del cliente (Client ID).
+password: Es la clave secreta (Client Secret).
+tenant: Es el ID del inquilino (Tenant ID).
+
+* El comando crea un Service Principal llamado "MyServicePrincipal" con permisos de Contributor en la suscripción especificada (2db30737-d824-4f00-811f-809768523d73). Esto significa que el Service Principal tendrá permisos para gestionar los recursos dentro de esa suscripción (por ejemplo, crear, modificar o eliminar máquinas virtuales, redes, almacenamiento, etc.).
+```sh
+az ad sp create-for-rbac --name "MyServicePrincipal" --role contributor --scopes /subscriptions/2db30737-d824-4f00-811f-809768523d73
+```
+
+az ad sp create-for-rbac --name "MyServicePrincipal" --role contributor --scopes /subscriptions/2db30737-d824-4f00-811f-809768523d73/resourceGroups/grupo_recursos_aks
+
+az role assignment list --assignee lamatarr@unirioja.es --scope /subscriptions/2db30737-d824-4f00-811f-809768523d73
+
+
+```sh
+az login --service-principal --username "appId" --password "password" --tenant "tenant"
+```
+
+
+
+
+
+openssl s_client -connect http://localhost:8081/ -tls1_2
+openssl s_client -connect http://localhost:8081/ -tls1_1
+
