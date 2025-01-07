@@ -87,11 +87,12 @@ Y se puede disponer de canales ya creados por defecto.
 
 Para sugerir nuevas ideas se puede crear un hilo de categoría “Ideas”:
 
-![](data:image/png;base64...)
+![ideas](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/gp_go_ideas.jpg)
 
 Para otras cuestiones se puede generar un hilo “General”
 
-![](data:image/png;base64...)
+![general](https://github.com/dialrepo/Hercules_SGI/blob/main/docs/img/gp_go_general.jpg)
+
 
 Si necesitamos comunicar algo sobre una tarea concreta, como ya se ha indicado en apartados anteriores, si es algo sencillo se puede hacer indicando un comentario en la propia historia con una mención @nombre\_persona y eso hará que le llegue una notificación que podrá ser respondida de la misma forma.
 
